@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phased Array</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 4rem;
+      border-bottom: 1px solid #1f1f1f;
+      background-color: #0a0a0a;
+    }
+
+    .logo {
+      color: #58a6ff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* Section styling */
+    .project-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 2rem 5%;
+      gap: 2rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 320px;
+      max-width: 600px;
+    }
+
+    .text-content h1 {
+      color: #58a6ff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-content h2 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-content h3 {
+      color: #aaaaaa;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-content p {
+      color: #dddddd;
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Antenna images */
+    .antenna-images {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: flex-start;
+    }
+
+    .image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .antenna-images img {
+      width: 150px;
+      height: 300px; /* updated height */
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #1f1f1f;
+    }
+
+    .image-label {
+      margin-top: 0.3rem;
+      font-size: 0.9rem;
+      color: #aaaaaa;
+      text-align: center;
+    }
+
+    /* Model container */
+    .model-container {
+      flex: 1;
+      min-width: 350px;
+      max-width: 550px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 55vh;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid #1f1f1f;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">Maman Ali</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#projects" style="color:#58a6ff;">Projects</a>
+      <a href="index.html#resume">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Unit Cell Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h1>Phased Array</h1>
+      <h2>Unit Cell</h2>
+      <p>
+        The designed unit cell is an antipodal Vivaldi antenna operating over a wide frequency band from 1 to 10 GHz.
+        It is optimized for broadband performance with an S<sub>11</sub> response below −10 dB and stable impedance characteristics.
+      </p>
+
+      <div class="antenna-images">
+        <div class="image-wrapper">
+          <img src="unitcell_top.png" alt="Top View of Antenna" />
+          <div class="image-label">Top View</div>
+        </div>
+        <div class="image-wrapper">
+          <img src="unitcell_bottom.png" alt="Bottom View of Antenna" />
+          <div class="image-label">Bottom View</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="unitcell/unitcell.gltf"
+        alt="Unit Cell 3D Model"
+        auto-rotate
+        rotation-per-second="30deg"
+        camera-orbit="0deg 75deg auto"
+        animation-name="spinBackForth"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      >
+        <script type="model-viewer">
+          const model = document.querySelector('model-viewer');
+          let angle = 0;
+          let direction = 1;
+          function spin() {
+            angle += direction * 0.5;
+            if(angle > 90) direction = -1;
+            if(angle < -45) direction = 1;
+            model.cameraOrbit = `${angle}deg 75deg auto`;
+            model.jumpCameraToGoal();
+            requestAnimationFrame(spin);
+          }
+          spin();
+        </script>
+      </model-viewer>
+    </div>
+  </section>
+
+  <!-- Array Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>Array</h2>
+      <p>
+        After optimizing the unit cell, it is replicated and arranged to form array structures according to application requirements.
+        Arrays of 1×2, 1×4, and 1×8 elements are designed to enhance gain and directivity while maintaining performance across the desired frequency band.
+      </p>
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="1x4_array/1x4_array.gltf"
+        alt="Phased Array 3D Model"
+        auto-rotate
+        rotation-per-second="30deg"
+        camera-orbit="0deg 75deg auto"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Maman Ali | All Rights Reserved
+  </footer>
+
+  <!-- Model Viewer Script -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Educational Satellites</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+  body {
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    border-bottom: 1px solid #1f1f1f;
+    background-color: #0a0a0a;
+  }
+
+  .logo {
+    color: #58a6ff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  nav a {
+    color: #ddd;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: #58a6ff;
+  }
+
+  /* Section styling */
+  .project-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* centers text and model vertically */
+    flex-wrap: wrap;
+    padding: 2rem 5%;
+    margin: 0;
+    gap: 2rem;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  /* Ensure even section spacing */
+  .project-section + .project-section {
+    margin-top: 0;
+  }
+
+  .text-content {
+    flex: 1;
+    min-width: 340px;
+    max-width: 600px;
+  }
+
+  .text-content h1 {
+    color: #58a6ff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-content h2 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .text-content h3 {
+    color: #aaaaaa;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-content p, .text-content ul {
+    color: #dddddd;
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-left: 1rem;
+  }
+
+  .model-container {
+    flex: 1;
+    min-width: 350px;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  model-viewer {
+    width: 100%;
+    height: 55vh;
+  }
+
+  /* Reduce spacing between footer and last section */
+  footer {
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #1f1f1f;
+    margin-top: 1rem;
+  }
+</style>
+</head>
+
+<!-- 3D Viewer Script -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">Maman Ali</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#projects" style="color:#58a6ff;">Projects</a>
+      <a href="index.html#resume">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Project Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h1>Educational Satellites</h1>
+      <h2>CanSat</h2>
+      <p>
+        This project focuses on the design and development of educational satellites, such as CanSat, which replicate the functions of a real satellite within the compact size of a standard soda can. 
+        The CanSat integrates an ESP32 microcontroller that serves as the main processing unit, responsible for handling onboard sensor data, system control, and communication management.
+        After onboard data acquisition and processing, the telemetry and image data are transmitted to the ground station. 
+        For short-range communication, the built-in ESP32 Wi-Fi antenna is utilized, while for extended range, NRF24L01 RF modules and custom-designed antennas are employed to ensure reliable and long-distance transmission.
+         All the components — including the sensors, communication modules, and processing unit — are systematically discussed in the following sections.
+      </p>
+
+      <h2>ESP32</h2>
+      <p>
+        The onboard computer uses an ESP32 controller that manages sensor data collection and wireless transmission. 
+        The module supports both telemetry and image streaming via ESP32-CAM integration.
+        The 3D model on the right represents the ESP32 module designed in SolidWorks and exported as a GLTF model for interactive visualization.
+      </p>
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="02_esp32.gltf"
+        alt="ESP32 3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+  <!-- Sensors Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>Sensors</h2>
+      <p>
+        The CanSat integrates multiple onboard sensors to monitor atmospheric and motion parameters during flight.
+        The key sensors include:
+      </p>
+      <ul>
+        <li><b>Barometer (BMP180):</b> Measures air pressure and altitude changes, enabling real-time height tracking.</li>
+        <li><b>Accelerometer (MPU6050):</b> Detects acceleration in three axes to analyze flight stability and launch dynamics.</li>
+        <li><b>Gyroscope:</b> Monitors angular velocity to measure rotational motion and satellite orientation.</li>
+        <li><b>Magnetometer (HMC5883L):</b> Provides heading information relative to Earth's magnetic field, assisting in attitude determination.</li>
+      </ul>
+      <p>
+        Combined, these sensors provide telemetry data such as altitude, velocity, and orientation that can be visualized and logged at the ground station.
+      </p>
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="03_sensors/03_sensors.gltf"
+        alt="Sensors 3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+    <!-- Sensors Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>Power Subsytem</h2>
+      <p>
+        The power subsystem uses a 3.7 V Li-ion battery boosted to 5 V to supply the ESP32 and ESP32-CAM, ensuring stable operation. 
+        The ESP32 internally regulates 3.3 V for sensors like the BMP180 and MPU6050. 
+        This setup provides efficient voltage conversion and consistent performance for all onboard modules.
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="04_power/04_power.gltf"
+        alt="Sensors 3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+      <!-- Sensors Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>Payload</h2>
+      <p>
+        The CanSat payload integrates an ESP32-CAM module that captures real-time images during flight and transmits them to the ground station through the same RF link used for telemetry. 
+        This enables continuous visual monitoring of the CanSat’s surroundings and descent conditions. 
+        The camera operates on a 5 V supply shared with the main controller, ensuring stable performance and synchronized data transfer.
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="esp32-cam/esp32-cam.gltf"
+        alt="Sensors 3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+      <!-- Sensors Section -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>NRF24L01+</h2>
+      <p>
+      The NRF24L01+ is a compact 2.4 GHz RF transceiver module used for reliable wireless communication in systems like CanSat. 
+      It connects to the ESP32 via SPI and supports data rates up to 2 Mbps with low power consumption. 
+      The module enables multi-device communication and includes features like auto acknowledgment and retransmission. Variants with an external antenna, PA, and LNA extend range and improve signal quality, making it ideal for long-range telemetry and data transfer in educational satellites
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="nrf24l01/nrf24l01.gltf"
+        alt="Sensors 3D Model"
+        auto-rotate
+        auto-rotate-delay="0"
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+  <!-- Payload Section -->
+<section class="project-section">
+  <div class="text-content">
+    <h2>Payload</h2>
+    Real-time telemetry from the CanSat is wirelessly transmitted via the Wi-Fi (IEEE 802.11) protocol to a dedicated ground station, where it is immediately displayed and logged to provide clear insight into the CanSat’s operational status, sensor data, and mission performance.
+     In addition, the mission payload includes a downward looking camera module designed for remote sensing operations, capturing terrain imagery and environmental features during descent, which is either stored onboard or streamed to the ground station for visual and analytical interpretation. 
+  </div>
+
+  <div class="model-container">
+    <img 
+      src="Ground_Station.jpg" 
+      alt="Ground Station GUI" 
+      style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 20px rgba(88,166,255,0.4);"
+    />
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Maman Ali | All Rights Reserved
+  </footer>
+
+</body>
+</html>

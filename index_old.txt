@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maman Ali | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ======= Navigation Bar ======= -->
+  <nav class="navbar">
+    <div class="logo">Maman Ali</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= Hero Section ======= -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="big-name">MAMAN ALI</h1>
+      <p class="tagline">Electrical Engineer</p>
+    </div>
+    <div class="hero-right">
+      <img src="MamanAli.png" alt="Maman Ali" class="profile-img">
+    </div>
+  </section>
+
+  <!-- ======= About Me Section ======= -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m an RF and Embedded Systems Engineer passionate about Antenna Design, IoT systems, and Student Satellites (CanSat & CubeSat).  
+      I build end-to-end systems: from hardware design and RF communication to real-time data processing and visualization.
+    </p>
+  </section>
+
+    <!-- ======= Skills Section ======= -->
+<section id="skills" class="skill">
+  <h2>Skills</h2>
+     <div class="skill-item">
+      <img src="ansys.png" alt="HFSS" />
+      <p>Ansys HFSS</p>
+      </div>
+  <div class="skill-grid">
+    <div class="skill-item">
+      <img src="Cadence.png" alt="AWR" />
+      <p>Cadence AWR</p>
+    </div>
+    <div class="skill-item">
+      <img src="esp32.png" alt="ESP32" />
+      <p>ESP32 Development</p>
+    </div>
+    <div class="skill-item">
+      <img src="solidworks.png" alt="SolidWorks" />
+      <p>SolidWorks</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Projects Section ======= -->
+<section id="projects" class="project">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="cansat.png" alt="CanSat" />
+      <h4>CanSat Mission</h4>
+      <p>Designed student satellite with ESP32, sensors, and custom RF communication system.</p>
+    </div>
+
+    <div class="project-card">
+      <img src="vivaldi.png" alt="Vivaldi Antenna" />
+      <h4>Vivaldi Antenna</h4>
+      <p>Wideband antenna design simulated in HFSS for 1–10 GHz operation.</p>
+    </div>
+
+    <div class="project-card">
+      <img src="cnc.png" alt="DIY CNC" />
+      <h4>DIY CNC Machine</h4>
+      <p>ESP32-based CNC controller for motor control, G-code interpretation, and precision motion.</p>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- ======= Footer ======= -->
+ <footer>
+    © 2025 Maman Ali — Crafted with Precision 🛰️
+ </footer>
+</body>
+</html>

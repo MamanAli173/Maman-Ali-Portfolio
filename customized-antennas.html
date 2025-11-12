@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customized Antennas for Space Applications</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 4rem;
+      border-bottom: 1px solid #1f1f1f;
+      background-color: #0a0a0a;
+    }
+
+    .logo {
+      color: #58a6ff;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: #ddd;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* Section layout */
+    .project-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0rem;
+      padding: 0rem 2%;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 320px;
+      max-width: 600px;
+    }
+
+    .text-content h1 {
+      color: #58a6ff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-content h2 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-content p {
+      color: #dddddd;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    .model-container {
+      flex: 1;
+      min-width: 350px;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 80vh;
+      border-radius: 12px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid #1f1f1f;
+      margin-top: 4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .project-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 4rem 5%;
+      }
+
+      model-viewer {
+        height: 60vh;
+      }
+    }
+
+    .sparam-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+  transition: transform 0.3s ease;
+  }
+
+  .sparam-img:hover {
+  transform: scale(1.05);
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">Maman Ali</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#projects" style="color:#58a6ff;">Projects</a>
+      <a href="index.html#resume">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Project Section 1 -->
+  <section class="project-section">
+    <div class="text-content">
+      <h1>Customized Antennas for Space Applications</h1>
+      <h2>Data Reception</h2>
+      <p>
+        I designed and simulated antennas in ANSYS HFSS to receive signals from NOAA weather satellites passing over my location.
+        These antennas were fabricated at low cost and connected to an SDR (Software Defined Radio) for signal acquisition.
+        The received signals were decoded into real-time satellite images using specialized software, followed by noise filtering
+        and signal correction to enhance clarity and accurately extract weather data.
+      </p>
+
+      <h2>V-Dipole Antenna (137 MHz)</h2>
+      <p>
+        The V-dipole antenna was designed for NOAA satellite signals at 137 MHz, optimized for circular polarization and wide beam coverage.
+        Simulated in ANSYS HFSS, it achieved proper impedance matching and gain suitable for low-elevation satellite passes.
+        The antenna was built using aluminum elements with a coaxial feed and successfully received real-time weather imagery when used with an SDR receiver.
+      </p>
+      <img src="v-dipole/v-dipole.png" alt="V-Dipole Antenna S-Parameters" class="sparam-img" />
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="v-dipole/v-dipole.gltf"
+        alt="V Dipole 3D Model"
+        auto-rotate
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+  <!-- Project Section 2 -->
+  <section class="project-section">
+    <div class="text-content">
+      <h2>Turnstile Antenna (137 MHz)</h2>
+      <p>
+        The Turnstile antenna operates at 137 MHz and is ideal for NOAA satellite reception.
+        It consists of two perpendicular half-wave dipoles fed 90° out of phase, creating circular polarization that ensures
+        consistent signal reception from low Earth orbit (LEO) satellites. Simulated in ANSYS HFSS, it shows a broad radiation pattern,
+        excellent 50 Ω impedance matching, and a low axial ratio—providing a low-cost and efficient solution for real-time weather imaging.
+      </p>
+      <img src="turnstile/turnstile.png" alt="Turnstile Antenna S-Parameters" class="sparam-img" />
+    </div>
+
+    <div class="model-container">
+      <model-viewer
+        src="turnstile/turnstile.gltf"
+        alt="Turnstile Antenna 3D Model"
+        auto-rotate
+        rotation-per-second="45deg"
+        disable-pan
+        disable-zoom
+        interaction-prompt="none"
+        shadow-intensity="1"
+        ar
+      ></model-viewer>
+    </div>
+  </section>
+
+  <section class="project-section">
+  <div class="text-content">
+    <h2>Yagi Antenna for CanSat Range Extension</h2>
+    <p>
+      To enhance communication range between the CanSat and the ground station, a Yagi-Uda antenna was designed, simulated in ANSYS HFSS, and fabricated at low cost. 
+      Operating at 2.4 GHz, the Yagi provides high directional gain and narrow beamwidth, focusing transmitted power toward the CanSat for extended range and improved signal strength. 
+      The antenna’s elements were optimized for impedance matching and front-to-back ratio, ensuring efficient RF energy transfer with minimal losses. 
+      When connected to the NRF24L01 transceiver, it successfully increased the CanSat’s communication distance up to several hundred meters under real test conditions.
+    </p>
+    <img src="Yagi-SParam.png" alt="Yagi Antenna S-Parameters" class="sparam-img" />
+  </div>
+
+  <div class="model-container">
+    <model-viewer
+      src="yagi-antenna/yagi-antenna.gltf"
+      alt="Yagi Antenna 3D Model"
+      rotation="0deg 90deg 0deg"
+      auto-rotate
+      auto-rotate-delay="0"
+      rotation-per-second="30deg"
+      disable-pan
+      disable-zoom
+      camera-controls
+      interaction-prompt="none"
+      shadow-intensity="1"
+      animation-name="rotation"
+      ar
+    ></model-viewer>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Maman Ali | All Rights Reserved
+  </footer>
+
+  <!-- 3D Viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>
