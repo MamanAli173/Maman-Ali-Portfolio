@@ -1,0 +1,240 @@
+{
+	"asset": {
+		"generator": "SOLIDWORKSGLTF",
+		"version" : "2.0"
+	},
+"extensionsUsed": [ "KHR_lights_punctual", "Solidworks_custom_properties", "KHR_draco_mesh_compression"],
+"extensionsRequired": [ "KHR_draco_mesh_compression" ],
+	"scene" : 0,
+	"scenes": [
+		{
+			"name": "Default - <Default>_Display State 1",
+			"nodes": [
+				0, 1]
+		}
+	],
+	"nodes": [
+		{
+			"matrix": [
+				-0.940936,					0.308061,					0.140491,					0,
+				0.153602,					0.018602,					0.987958,					0,
+				0.301738,					0.951185,					-0.0648221,					0,
+				0.566628,					1.69117,					-0.0327056,					1
+			]
+			,"camera": 0
+			,"name": "current"		}
+,
+		{
+			"mesh": 0
+			,"name": "1x4_array.step"		}
+	],
+	"cameras": [
+		{
+			"type": "orthographic",
+			"orthographic" : {
+				"xmag": 1,
+				"ymag" : 1,
+				"zfar" : 100,
+				"znear" : 0.01
+			}
+		}
+	],
+	"meshes" : [
+		{
+			"primitives" : [
+				{
+					"attributes" : {
+					"POSITION" : 1,
+					"NORMAL" : 2,
+					"TEXCOORD_0" : 3
+					},
+					"indices" : 0,
+					"mode": 4,
+					"material" : 1
+					,"extensions": {
+					"KHR_draco_mesh_compression": {
+					"bufferView": 0,
+					"attributes" : {
+					"POSITION": 0,
+					"NORMAL" : 1,
+					"TEXCOORD_0" : 2
+					}
+					}
+					}
+				},
+				{
+					"attributes" : {
+					"POSITION" : 5,
+					"NORMAL" : 6,
+					"TEXCOORD_0" : 7
+					},
+					"indices" : 4,
+					"mode": 4,
+					"material" : 2
+					,"extensions": {
+					"KHR_draco_mesh_compression": {
+					"bufferView": 1,
+					"attributes" : {
+					"POSITION": 0,
+					"NORMAL" : 1,
+					"TEXCOORD_0" : 2
+					}
+					}
+					}
+				},
+				{
+					"attributes" : {
+					"POSITION" : 9,
+					"NORMAL" : 10,
+					"TEXCOORD_0" : 11
+					},
+					"indices" : 8,
+					"mode": 4,
+					"material" : 3
+					,"extensions": {
+					"KHR_draco_mesh_compression": {
+					"bufferView": 2,
+					"attributes" : {
+					"POSITION": 0,
+					"NORMAL" : 1,
+					"TEXCOORD_0" : 2
+					}
+					}
+					}
+				}
+			]
+		}
+	],
+	"accessors" : [
+			{
+				"componentType" : 5123
+				,"count" : 10440
+				,"type" : "SCALAR"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4608
+				,"type" : "VEC3"
+				,"min" : [-3.84999998e-02, -1.54299999e-03, -3.64820895e-18]
+				,"max" : [3.84999998e-02, 8.00350010e-02, 1.69000000e-01]
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4608
+				,"type" : "VEC3"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4608
+				,"type" : "VEC2"
+			},
+			{
+				"componentType" : 5123
+				,"count" : 6
+				,"type" : "SCALAR"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4
+				,"type" : "VEC3"
+				,"min" : [-8.50000011e-04, -1.50799996e-03, -5.02742333e-19]
+				,"max" : [1.70000002e-03, 2.51096241e-35, 5.20474901e-20]
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4
+				,"type" : "VEC3"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 4
+				,"type" : "VEC2"
+			},
+			{
+				"componentType" : 5123
+				,"count" : 108
+				,"type" : "SCALAR"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 72
+				,"type" : "VEC3"
+				,"min" : [-3.84999998e-02, -1.50799996e-03, -2.35744510e-18]
+				,"max" : [3.84999998e-02, 7.99999982e-02, 1.74999997e-01]
+			},
+			{
+				"componentType" : 5126
+				,"count" : 72
+				,"type" : "VEC3"
+			},
+			{
+				"componentType" : 5126
+				,"count" : 72
+				,"type" : "VEC2"
+			}
+	],
+	"materials": [
+			{
+				"pbrMetallicRoughness": {
+					"baseColorFactor": [
+						0.498039, 0.498039, 0.498039, 1
+					]
+					,"metallicFactor": 0
+					,"roughnessFactor": 1
+				}
+			},
+			{
+				"name": "color-2"
+				,"pbrMetallicRoughness": {
+					"baseColorFactor": [
+						1, 1, 0, 1
+					]
+					,"metallicFactor": 0
+					,"roughnessFactor": 0.18
+				}
+			},
+			{
+				"name": "color-1"
+				,"pbrMetallicRoughness": {
+					"baseColorFactor": [
+						0.560784, 0.686275, 0.560784, 1
+					]
+					,"metallicFactor": 0
+					,"roughnessFactor": 0.16
+				}
+			},
+			{
+				"name": "color"
+				,"pbrMetallicRoughness": {
+					"baseColorFactor": [
+						0.752941, 0.752941, 0.752941, 1
+					]
+					,"metallicFactor": 0
+					,"roughnessFactor": 0.16
+				}
+			}
+	],
+	"bufferViews" : [
+			{
+				"buffer": 0
+				,"byteOffset" : 0
+				,"byteLength" : 13368
+			},
+			{
+				"buffer": 0
+				,"byteOffset" : 13368
+				,"byteLength" : 192
+			},
+			{
+				"buffer": 0
+				,"byteOffset" : 13560
+				,"byteLength" : 484
+			}
+	],
+	"buffers" : [
+			{
+				"byteLength": 14044
+				,"uri" : "data.bin"
+			}
+	]
+}
